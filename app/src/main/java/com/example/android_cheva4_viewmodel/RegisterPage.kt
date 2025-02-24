@@ -128,7 +128,7 @@ fun RegisterPage(
                         }
 
                         else -> {
-                            Toast.makeText(context, "Login Successful", Toast.LENGTH_SHORT)
+                            Toast.makeText(context, "Register Successful", Toast.LENGTH_SHORT)
                                 .show()
                         }
                     }
