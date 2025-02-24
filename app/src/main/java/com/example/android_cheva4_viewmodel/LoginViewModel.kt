@@ -20,6 +20,9 @@ class LoginViewModel : ViewModel() {
     private val _email = MutableStateFlow("")
     val email: StateFlow<String> = _email.asStateFlow()
 
+    private val _confirmPassword = MutableStateFlow("")
+    val confirmPassword: StateFlow<String> = _confirmPassword.asStateFlow()
+
     fun updateUsername(newUsername: String) {
         _username.value = newUsername
     }
@@ -34,6 +37,10 @@ class LoginViewModel : ViewModel() {
 
     fun togglePasswordVisibility() {
         _passwordVisible.value = !_passwordVisible.value
+    }
+
+    fun updateConfirmPassword(newPassword: String) {
+        _confirmPassword.value = newPassword
     }
 
 }

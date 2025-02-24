@@ -39,6 +39,7 @@ fun RegisterPage(
 
     val username by viewModel.username.collectAsState()
     val password by viewModel.password.collectAsState()
+    val confirmPassword by viewModel.confirmPassword.collectAsState()
     val email by viewModel.email.collectAsState()
 
     Surface {
@@ -71,7 +72,7 @@ fun RegisterPage(
             TextField(
                 modifier = Modifier.fillMaxWidth(),
                 label = "Username",
-                hint = "Input your username / email",
+                hint = "Input your username",
                 value = username,
                 onValueChange = { newUsername ->
                     //username = newUsername
@@ -103,12 +104,12 @@ fun RegisterPage(
             )
             PasswordField(
                 modifier = Modifier.fillMaxWidth(),
-                label = "Password",
-                hint = "Configure your password",
-                value = password,
-                onValueChange = { newPassword ->
+                label = "Confirm Your Password",
+                hint = "Confirm your password",
+                value = confirmPassword,
+                onValueChange = { newConfirmPassword ->
                     //password = newPassword
-                    viewModel.updatePassword(newPassword)
+                    viewModel.updateConfirmPassword(newConfirmPassword)
                 },
                 leadingIcon = {
                     Icon(
